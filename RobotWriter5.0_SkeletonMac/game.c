@@ -78,23 +78,36 @@ void drawTheGrid(void)
     sprintf (buffer, "S0\n");
     SendCommands(buffer);
 
-    //Move the Robot
-    sprintf (buffer, "G0 X%.2f Y%.2f\n", -gridSize/2,gridSize/6);
+    //Draw the Grid
+    sprintf (buffer, "G0 X%.2f Y%.2f\n", 0.0, -gridSize/3);
     SendCommands(buffer);
-    sprintf (buffer, "G1 X%.2f Y%.2f\n", gridSize/2,gridSize/6);
+    sprintf (buffer, "G1 X%.2f Y%.2f\n", gridSize, -gridSize/3);
     SendCommands(buffer);
-    sprintf (buffer, "G0 X%.2f Y%.2f\n", -gridSize/2,-gridSize/6);
+    sprintf (buffer, "G0 X%.2f Y%.2f\n", 0.0, -gridSize*2/3);
     SendCommands(buffer);
-    sprintf (buffer, "G1 X%.2f Y%.2f\n", gridSize/2,-gridSize/6);
+    sprintf (buffer, "G1 X%.2f Y%.2f\n", gridSize, -gridSize*2/3);
     SendCommands(buffer);
-    sprintf (buffer, "G0 X%.2f Y%.2f\n", -gridSize/6,gridSize/2);
+    sprintf (buffer, "G0 X%.2f Y%.2f\n", gridSize/3, 0.0);
     SendCommands(buffer);
-    sprintf (buffer, "G1 X%.2f Y%.2f\n", -gridSize/6,-gridSize/2);
+    sprintf (buffer, "G1 X%.2f Y%.2f\n", gridSize/3, -gridSize);
     SendCommands(buffer);
-    sprintf (buffer, "G0 X%.2f Y%.2f\n", gridSize/6,gridSize/2);
+    sprintf (buffer, "G0 X%.2f Y%.2f\n", gridSize*2/3, 0.0);
     SendCommands(buffer);
-    sprintf (buffer, "G1 X%.2f Y%.2f\n", gridSize/6,-gridSize/2);
+    sprintf (buffer, "G1 X%.2f Y%.2f\n", gridSize*2/3, -gridSize);
     SendCommands(buffer);
-    sprintf (buffer, "G0 X2.5 Y-2.5\n");
+    sprintf (buffer, "G0 X0 Y0\n");
     SendCommands(buffer);
 }
+
+// int checkWinner (int buffer)
+// {
+//     float buffer[3][3];
+// }
+
+// void gameProcess (void)
+// {
+//     while(1)
+//     {
+//         printf("Please User1 select you");
+//     }
+// }
