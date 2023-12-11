@@ -22,18 +22,6 @@ void SendCommands (char *buffer );
 int main()
 {
     // Read the file and store the data
-    struct PenStroke{
-        int x;
-        int y;
-        int penStatus;
-    } ;
-
-    struct Shape{
-        char name[50];
-        int numStrokes;
-        struct PenStroke *strokes;
-    };
-    int numShapes;
     struct Shape shapeList[numShapes];
     FILE *file = fopen("ShapeStrokeData.txt", "r");
     if (file == NULL) {
@@ -45,7 +33,7 @@ int main()
 
     // User select favourite shape (1-5)
     int User1, User2;
-
+    shapeSelection (&User1, &User2);
 
     char buffer[100];
  

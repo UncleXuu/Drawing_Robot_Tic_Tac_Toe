@@ -16,10 +16,9 @@
         int numStrokes;
         struct PenStroke *strokes;
     };
-
     int numShapes;
 
 int ReadShape (struct Shape *shapeList, FILE *file);
 void freeShape(struct Shape *shapeList);
-
+void shapeSelection (int *User1,int *User2);
 #endif

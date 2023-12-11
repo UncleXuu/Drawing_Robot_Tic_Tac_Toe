@@ -4,25 +4,12 @@
 #include "game.h"
 
     // Store the the information of each shape from file
-    struct PenStroke{
-        int x;
-        int y;
-        int penStatus;
-    } ;
 
-    struct Shape{
-        char name[50];
-        int numStrokes;
-        struct PenStroke *strokes;
-    };
-
-    int numShapes;
 int ReadShape (struct Shape *shapeList, FILE *file)
     {
     //printf("0");
 
     //printf("2");
-
     for (int i = 0; i < numShapes; i++) 
     {
         struct Shape shape;
@@ -54,3 +41,21 @@ int ReadShape (struct Shape *shapeList, FILE *file)
         free(shapeList[i].strokes);
     }
     }
+
+    void shapeSelection (int *User1,int *User2)
+{
+    printf("Please User1 Select a Shape (please enter a number 1-5)");
+    scanf("%d",User1);
+    while (*User1<1 || *User1>5)
+    {
+        printf("Please Reselct Your Number");
+        scanf("%d", User1);
+    }
+    printf("Please User2 Select a Shape (please enter a number 1-5)");
+    scanf("%d",User2);
+    while (*User2<1 || *User2>5 || *User2==*User1)
+    {
+        printf("Please Reselct Your Number");
+        scanf("%d",User2);
+    }
+}
