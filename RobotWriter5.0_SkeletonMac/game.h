@@ -5,20 +5,24 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-    struct PenStroke{
-        int x;
-        int y;
-        int penStatus;
-    } ;
+struct PenStroke{
+    int x;
+    int y;
+    int penStatus;
+} ;
 
-    struct Shape{
-        char name[50];
-        int numStrokes;
-        struct PenStroke *strokes;
-    };
-    int numShapes;
+struct Shape{
+    char name[50];
+    int numStrokes;
+    struct PenStroke *strokes;
+};
 
-int ReadShape (struct Shape *shapeList, FILE *file);
+int numShapes;
+
+void SendCommands (char *buffer );
+int readShape (struct Shape *shapeList, FILE *file);
 void freeShape(struct Shape *shapeList);
 void shapeSelection (int *User1,int *User2);
+void drawTheGrid(void);
+
 #endif

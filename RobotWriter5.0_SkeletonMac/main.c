@@ -19,7 +19,7 @@
 
 void SendCommands (char *buffer );
 
-int main()
+int main(void)
 {
     // Read the file and store the data
     struct Shape shapeList[numShapes];
@@ -29,11 +29,12 @@ int main()
         return 1;
     }
     fscanf(file, "NumShapes %d\n", &numShapes); // Read the number of shapes
-    ReadShape (shapeList,file);
+    readShape (shapeList,file);
 
     // User select favourite shape (1-5)
     int User1, User2;
     shapeSelection (&User1, &User2);
+
 
     char buffer[100];
  
@@ -47,8 +48,6 @@ int main()
     // Time to wake up the robot
     printf ("\nAbout to wake up the robot\n");
 
-    
-
     // We do this by sending a new-line
     sprintf (buffer, "\n");
     // printf ("Buffer to send: %s", buffer); // For diagnostic purposes only, normally comment out
@@ -59,11 +58,13 @@ int main()
     Sleep(100);
     #endif
 
-
     // This is a special case - we wait  until we see a dollar ($)
     WaitForDollar();
 
     printf ("\nThe robot is now ready to draw\n");
+
+    // Read the size and draw the grid   
+    drawTheGrid();
 
     //These commands get the robot into 'ready to draw mode' and need to be sent before any writing commands
     // sprintf (buffer, "G1 X0 Y0 F1000\n");
