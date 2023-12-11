@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "serial.h"
 
 #define MAC
 
@@ -12,6 +11,8 @@
 #include <Windows.h>
 #include "rs232.h"
 #endif
+
+#include "serial.h"
 
 // #define Serial_Mode
 
