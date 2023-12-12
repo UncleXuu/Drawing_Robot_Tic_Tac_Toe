@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define SIZE 3
+
 struct PenStroke{
     int x;
     int y;
@@ -23,7 +25,8 @@ void SendCommands (char *buffer );
 int readShape (struct Shape *shapeList, FILE *file);
 void freeShape(struct Shape *shapeList);
 void shapeSelection (int *User1,int *User2);
-void drawTheGrid(void);
-// void gameProcess (void);
+void drawTheGrid(float *gridSize);
+int checkWinner (int chessboard[SIZE][SIZE], float gridSize);
+int gameLoop (float gridSize);
 
 #endif
