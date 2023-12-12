@@ -67,8 +67,12 @@ int main(void)
     float gridSize;
     drawTheGrid(&gridSize);
 
+    //Scale the movement
+    float scale;
+    scale = scaleMovements (gridSize);
+
     // Start the game
-    gameLoop(gridSize);
+    gameLoop(gridSize, shapeList, User1, User2, scale);
 
     //These commands get the robot into 'ready to draw mode' and need to be sent before any writing commands
     // sprintf (buffer, "G1 X0 Y0 F1000\n");

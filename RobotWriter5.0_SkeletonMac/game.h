@@ -25,11 +25,11 @@ int numShapes;
 
 void SendCommands (char *buffer );
 int readShape (struct Shape *shapeList, FILE *file);
-void freeShape(struct Shape *shapeList);
-void shapeSelection (int *User1,int *User2);
-void drawTheGrid(float *gridSize);
+void freeShape (struct Shape *shapeList);
+void shapeSelection (int *User1, int *User2);
+void drawTheGrid (float *gridSize);
 int checkWinner (int chessboard[SIZE][SIZE], float gridSize);
-float scaleMovements(float gridSize);
-int gameLoop (float gridSize);
+float scaleMovements (float gridSize);
+int gameLoop (float gridSize, struct Shape shapeList[numShapes], int User1, int User2, float scale);
 
 #endif
