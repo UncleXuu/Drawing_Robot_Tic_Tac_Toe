@@ -6,6 +6,8 @@
 #include <unistd.h>
 
 #define SIZE 3
+#define SHAPEUNITS 16
+#define GAP 2
 
 struct PenStroke{
     int x;
@@ -27,6 +29,7 @@ void freeShape(struct Shape *shapeList);
 void shapeSelection (int *User1,int *User2);
 void drawTheGrid(float *gridSize);
 int checkWinner (int chessboard[SIZE][SIZE], float gridSize);
+float scaleMovements(float gridSize);
 int gameLoop (float gridSize);
 
 #endif

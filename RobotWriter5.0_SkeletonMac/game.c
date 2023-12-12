@@ -351,6 +351,13 @@ int checkWinner (int chessboard[SIZE][SIZE],float gridSize)
     }
 }
 
+float scaleMovements(float gridSize)
+{
+    float scale;
+    scale=((gridSize/3)-2*GAP)/SHAPEUNITS;
+    return scale;
+}
+
 int gameLoop (float gridSize)
 {
     int x,y;
