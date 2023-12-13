@@ -22,13 +22,13 @@ void SendCommands (char *buffer );
 int main(void)
 {
     // Read the file and store the data
-    struct Shape shapeList[numShapes];
     FILE *file = fopen("ShapeStrokeData.txt", "r");
     if (file == NULL) {
         printf("Error opening file");
         return 1;
     }
     fscanf(file, "NumShapes %d\n", &numShapes); // Read the number of shapes
+    struct Shape shapeList[numShapes];
     readShape (shapeList,file);
 
     // User select favourite shape (1-5)
